@@ -1,0 +1,36 @@
+{{ $ := .root }}
+{{ $page := .page }}
+{{ $fb := $page.Params.fb_url }}
+
+<div class="row">
+  <div id="fb-root"></div>
+  <script async defer crossorigin="anonymous"
+    src="https://connect.facebook.net/fr_FR/sdk.js#xfbml=1&version=v6.0&appId=250827476077308&autoLogAppEvents=1"></script>
+
+  {{ with $page.Title }}
+  <div class="col-12 text-center section-heading">
+
+    {{ with $page.Title }}<h1>{{ . | markdownify | emojify }}</h1>{{ end }}
+    {{ with $page.Params.subtitle }}<p>{{ . | markdownify | emojify }}</p>{{ end }}
+
+  </div>
+  {{ end }}
+
+  {{ with $page.Content }}
+  <div class="col-12">
+    {{ . | markdownify }}
+  </div>
+  {{ end }}
+
+  <div class="col-12 text-center section-heading">
+
+    <div class="fb-page" data-href="{{ $fb }}" data-tabs="events" data-width="800" data-height=""
+      data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"
+      style="text-align:center,">
+      <blockquote cite="{{ $fb }}" class="fb-xfbml-parse-ignore">
+        <a href="{{ $fb }}">Les Open Bardes</a>
+      </blockquote>
+    </div>
+  </div>
+
+</div>

@@ -1,0 +1,27 @@
+{{ $ := .root }}
+{{ $page := .page }}
+
+<div class="row">
+  <div id="fb-root"></div>
+  <script async defer crossorigin="anonymous"
+    src="https://connect.facebook.net/fr_FR/sdk.js#xfbml=1&version=v6.0&appId=250827476077308&autoLogAppEvents=1"></script>
+
+  {{ with $page.Title }}
+  <div class="col-12 text-center section-heading">
+
+    {{ with $page.Title }}<h1>{{ . | markdownify | emojify }}</h1>{{ end }}
+    {{ with $page.Params.subtitle }}<p>{{ . | markdownify | emojify }}</p>{{ end }}
+
+  </div>
+  {{ end }}
+
+  {{ with $page.Content }}
+  <div class="col-12">
+    {{ . | markdownify }}
+  </div>
+  {{ end }}
+
+  <script src="https://apps.elfsight.com/p/platform.js" defer></script>
+  <div class="elfsight-app-f2933cec-29fd-471e-91f1-1ac49aa20dc6"></div>
+
+</div>
