@@ -5,13 +5,22 @@ name = "openbardes"
 light = true
 
 # Primary
-primary = "#FBBA00"
+#primary = "#FBBA00"
 
 # Menu
-menu_primary = "#0965de"
-menu_text = "#ffffff"
-menu_text_active = "#FBBA00"
-menu_title = "#FBBA00"
+#menu_primary = "#0965de"
+#menu_text = "#ffffff"
+#menu_text_active = "#FBBA00"
+#menu_title = "#FBBA00"
+
+# Primary
+primary = "#0965de"
+
+# Menu
+menu_primary = "#fff"
+menu_text = "#34495e"
+menu_text_active = "#0965de"
+menu_title = "#0965de"
 
 # Home sections
 home_section_odd = "rgb(255, 255, 255)"
@@ -21,4 +30,5 @@ home_section_even = "rgb(247, 247, 247)"
 # Old Blue 2C2F8C
 # Old Light Blue 1FB7F1
 # New Yellow FBBA00
-# New Blue 053879
+# New Blue 053879 #0965de
+# Nello blue #0019cc
