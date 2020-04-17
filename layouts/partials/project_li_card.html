@@ -18,6 +18,7 @@
     <div class="card-body">
       <h4>{{ $item.Title | markdownify | emojify }}</h4>
       <div class="card-desription">
+        <p style="font-size:smaller;">{{ index $item.Site.Data.months (printf "%d" $item.Params.date.Month) }} {{ $item.Params.date.Year }}</p>
         {{ with $item.Params.summary }}<p>{{ . | markdownify | emojify }}</p>{{ end }}
       </div>
     </div>
