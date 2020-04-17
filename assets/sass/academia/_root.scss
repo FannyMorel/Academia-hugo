@@ -279,17 +279,56 @@ small,
 
 a[data-fancybox] {
   text-decoration: none;
+  display: inline-block;
+  overflow: hidden;
   cursor: zoom-in;
+}
+
+.gallery a[data-fancybox] img:hover {
+  transform: scale(1.05);
+  -webkit-transition: all 0.2s ease-in-out;
+  -moz-transition: all 0.2s ease-in-out;
+  -o-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
 }
 
 .gallery a[data-fancybox] img {
   height: 250px;
-  max-width: 100%;
+  max-width: 250px;
   display: inherit;
   margin: 0;
   padding: 4px;
   box-shadow: none;
-  vertical-align: inherit;
+  vertical-align: middle;
+  object-fit: cover;
+}
+
+/* Wrap the image and alt text */
+/* Will be added with js */
+.alt-wrap { 
+  display: inherit;
+  position: relative;
+}
+
+/* The alt text itself */
+/* Will be added with js */
+.alt-wrap p.alt {
+  position: absolute;
+  opacity: 0; /* hide initially */
+  left: 0; right: 0; bottom: 0;
+  margin: 0;
+  padding: 4px;
+  font-size: 0.6rem;
+  line-height: 1.5rem;
+  text-align: center;
+  background-color: rgba(0,0,0,0.8);
+  color: whitesmoke;
+}
+
+/* Hovering over the wrapper shows its alt p*/
+.alt-wrap:hover > p.alt { 
+  opacity: 1; 
+  transition: all 0.2s ease-in-out;
 }
 
 .fancybox-caption {

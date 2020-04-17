@@ -22,14 +22,17 @@
     {{ $image := .Resize "x190" }}
     {{/* Check if the user set a caption for this image */}}
     {{ $filename := path.Base .Name }}
-    {{ $caption := "" }}
+    {{ $caption := path.Base .Name }}
     {{ if $.Page.Params.gallery_item }}
       {{ range (where (where $.Page.Params.gallery_item "album" $album) "image" $filename) }}
         {{ $caption = .caption }}
       {{ end }}
     {{ end }}
   <a data-fancybox="gallery-{{$album}}" href="{{ .RelPermalink }}" {{ with $caption }}data-caption="{{.|markdownify|emojify|safeHTMLAttr}}"{{ end }}>
-  <img src="{{ $image.RelPermalink }}" alt="">
+    <div class="alt-wrap">
+      <img src="{{ $image.RelPermalink }}" alt="{{ $caption }}">
+      <p class="alt">{{ $caption}}</p>
+    </div>
   </a>
   {{end}}
 
