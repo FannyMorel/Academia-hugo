@@ -293,8 +293,16 @@ a[data-fancybox] {
 }
 
 .gallery a[data-fancybox] img {
-  height: 250px;
-  max-width: 100%;
+  width: 100%;
+  display: inherit;
+  margin: 0;
+  padding: 4px;
+  box-shadow: none;
+  vertical-align: middle;
+  object-fit: cover;
+}
+
+.gallery a[data-fancybox] iframe {
   display: inherit;
   margin: 0;
   padding: 4px;

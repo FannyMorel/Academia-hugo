@@ -56,4 +56,18 @@
     {{ errorf "Unable to load gallery in %s." .Page.File.Filename }}
   {{end}}
   {{end}}
+
+  {{ if $.Page.Params.youtube_item }}
+  {{ range $.Page.Params.youtube_item}}
+  {{ $album := .album}}
+  {{ $video := .video }}
+  {{ $caption := .caption }}
+  <a data-fancybox="gallery-{{$album}}" href="{{ $video }}" {{ with $caption }}data-caption="{{.|markdownify|emojify|safeHTMLAttr}}"{{ end }}>
+    <iframe width="560" height="349" src="{{ $video }}" frameborder="0"
+          allow="accelerometer; autoplay; gyroscope; picture-in-picture" allowfullscreen>
+    </iframe>
+  </a>
+  {{end}}
+  {{end}}
+
 </div>
