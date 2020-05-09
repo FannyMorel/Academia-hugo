@@ -303,7 +303,7 @@ a[data-fancybox] {
 }
 
 .gallery .video-container {
-  max-width: calc((100% - 100px));
+  max-width: calc((100% - 40px));
   width: 530px;
   height: 300px;
   text-decoration: none;
@@ -319,6 +319,7 @@ a[data-fancybox] {
   height: 100%;
   box-shadow: none;
   vertical-align: middle;
+  align-items: center;
   object-fit: cover;
 }
 
