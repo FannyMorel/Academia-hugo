@@ -302,10 +302,21 @@ a[data-fancybox] {
   object-fit: cover;
 }
 
-.gallery a[data-fancybox] iframe {
+.gallery .video-container {
+  max-width: calc((100% - 100px));
+  width: 530px;
+  height: 300px;
+  text-decoration: none;
+  display: inline-block;
+  overflow: hidden;
+}
+
+.gallery .video-container iframe {
   display: inherit;
   margin: 0;
   padding: 4px;
+  width: 100%;
+  height: 100%;
   box-shadow: none;
   vertical-align: middle;
   object-fit: cover;
