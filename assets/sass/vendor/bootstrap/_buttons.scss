@@ -107,10 +107,14 @@ fieldset:disabled a.btn {
 
 .btn-lg {
  font-size: 1.0em !important;
- padding: 15px 5px !important;
+ padding: 15px 10px !important;
  margin-bottom: 2px; 
- width: 30%; 
+ min-width: 30%
 }
+
+.btn-bio {
+  width: 35%
+ }
 
 .btn-sm {
   @include button-size($btn-padding-y-sm, $btn-padding-x-sm, $btn-font-size-sm, $btn-line-height-sm, $btn-border-radius-sm);
